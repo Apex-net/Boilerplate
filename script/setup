@@ -8,6 +8,12 @@ source "script/helpers/_helpers.sh"
 
 begin
 
-# TODO: do something
+topic 'Removing all untracked files, including build products.'
+  git clean -fdx | indent
+
+topic 'Resetting the git index and working tree, discarding changes to tracked files in the working tree.'
+  git reset --hard | indent
+
+topic 'Calling `script/bootstrap`...' && script/bootstrap
 
 end

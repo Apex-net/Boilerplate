@@ -8,6 +8,11 @@ source "script/helpers/_helpers.sh"
 
 begin
 
+# You should set up any specific things for your environment here before your
+# tests are run.
+
 # TODO: do something
+
+topic 'Calling `script/test`...' && script/test
 
 end

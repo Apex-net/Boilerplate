@@ -8,6 +8,8 @@ source "script/helpers/_helpers.sh"
 
 begin
 
+topic 'Calling `script/update`...' && script/update
+
 # TODO: do something
 
 end

@@ -8,6 +8,12 @@ source "script/helpers/_helpers.sh"
 
 begin
 
+# This is a good opportunity to run database migrations or any other things
+# required to get the state of the app into shape for the current version that
+# is checked out.
+
 # TODO: do something
+
+topic 'Calling `script/bootstrap`...' && script/bootstrap
 
 end

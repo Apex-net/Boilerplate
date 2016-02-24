@@ -8,6 +8,7 @@ source "script/helpers/_helpers.sh"
 
 begin
 
-# TODO: do something
+topic 'Installing all required dependencies via NuGet.'
+  nuget restore | indent
 
 end

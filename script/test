@@ -8,6 +8,14 @@ source "script/helpers/_helpers.sh"
 
 begin
 
+if [[ "${CI:-,,}" = "true" ]]; then
+  topic 'Testing in continuous integration server...'
+  topic 'Calling `script/setup`...' && script/setup
+else
+  topic 'Testing in development environment...'
+  topic 'Calling `script/update`...' && script/update
+fi
+
 # TODO: do something
 
 end
