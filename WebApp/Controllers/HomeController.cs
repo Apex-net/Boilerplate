@@ -1,17 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
-
-namespace WebApp.Controllers
+﻿namespace WebApp.Controllers
 {
+    using System.Linq;
+    using System.Web.Mvc;
+    using Model.DataAccessLayer;
+
     public class HomeController : Controller
     {
-        // GET: Home
         public ActionResult Index()
         {
-            return View();
+            var schoolContext = new SchoolContext();
+            var students = schoolContext.Students.ToList();
+
+            return this.View(students);
         }
     }
 }
