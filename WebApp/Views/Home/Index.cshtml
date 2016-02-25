@@ -1,5 +1,9 @@
-﻿@{
+﻿@model IEnumerable<Model.Models.Student>
+
+@{
     ViewBag.Title = "Index";
 }
 
 <h2>Deploy from GitHub</h2>
+
+@Html.DisplayForModel()
