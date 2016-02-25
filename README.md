@@ -8,7 +8,7 @@ This repository contains (along with the README you're reading right now) contai
 
 Following is the recommended setup to work as a developer.
 
-:warning: **Be aware that if you don't do these first, the rest of this guide will be _very_ hard to accomplish.**
+:warning: **Be aware that if you don't do these first, the rest of this guide will be _very_ hard to complete.**
 
 0. Install [GitHub Desktop](https://desktop.github.com/) and set your default shell to "Git Bash" in options.
 
@@ -21,46 +21,55 @@ Following is the recommended setup to work as a developer.
 
 Following is the recommended setup to work with Azure.
 
-0. Install [node.js (stable)](https://nodejs.org/en/#download).
+0. Install [node.js (stable)](https://nodejs.org/en/#download). _(Actually you may decide not to do this, but then you will probably have to install Azure CLI below using Windows installer.)_
 
 0. Install [Azure CLI](https://azure.microsoft.com/en-us/documentation/articles/xplat-cli-install/) and then make sure `azure --version` prints out something similar to `0.9.15 (node: 4.2.4)`.
 
-  > :information_source: You may need to add `C:\Program Files (x86)\Microsoft SDKs\Azure\CLI\bin` to your `PATH` to make this work.
+  > :information_source: You may need to add `C:\Program Files (x86)\Microsoft SDKs\Azure\CLI\bin` to your `PATH` to make this work. _Try first_, then decide if this is necessary.
 
 
 ## How to Create a New Project
 
-Following the instructions you should be able to create a new VS solution and a git repository using this boilerplate.
+Following the instructions you should be able to create a new VS solution and a git repository using this boilerplate:
 
-0. Install [NuGet command line utility](https://docs.nuget.org/consume/command-line-reference#user-content-installing)
+```bash
+## First off `cd` into wherever you want to create project folder
+cd <somewhere>
 
-0. In your terminal...
-  ```bash
-  ## First off `cd` into wherever you want to create project folder
-  cd <somewhere>
+## Set some variables...
+PROJECT_NAME='foobar'
+GH_USER='user'
+GH_REPO='repo'
 
-  ## Set some variables...
-  PROJECT_NAME='foobar'
-  GH_USER='user'
-  GH_REPO='repo'
+## 1. Create project directory
+## 2. Download & extract the boilerplate
+## 3. Setup files and contents using project name
+## 4. Create empty git repository
+## 5. Add files to source control
+## 6. Add remote and push to GitHub
+mkdir $PROJECT_NAME
+curl -sL https://github.com/Apex-net/TryAzure/archive/master.tar.gz | tar -xzC $PROJECT_NAME --strip-components=1
+cd $PROJECT_NAME
+mv Boilerplate.sln "$PROJECT_NAME.sln"
+git init && git commit --allow-empty -m"First commit."
+git add . && git commit -m"Initial project structure."
+git remote add origin "https://github.com/$GH_USER/$GH_REPO.git"
+git push --set-upstream origin master
+```
 
-  ## 1. Create project directory
-  ## 2. Download & extract the boilerplate
-  ## 3. Setup files and contents using project name
-  ## 4. Create empty git repository
-  ## 5. Add files to source control
-  ## 6. Add remote and push to GitHub
-  mkdir $PROJECT_NAME
-  curl -sL https://github.com/Apex-net/TryAzure/archive/master.tar.gz | tar -xzC $PROJECT_NAME --strip-components=1
-  cd $PROJECT_NAME
-  mv Boilerplate.sln "$PROJECT_NAME.sln"
-  git init && git commit --allow-empty -m"First commit."
-  git add . && git commit -m"Initial project structure."
-  git remote add origin "https://github.com/$GH_USER/$GH_REPO.git"
-  git push --set-upstream origin master
-  ```
+### Build & Run
+
+This boilerplate tries to be compatible with ["Scripts to Rule Them All"](https://github.com/github/scripts-to-rule-them-all), but first off you will need to install [NuGet command line utility](https://docs.nuget.org/consume/command-line-reference#user-content-installing) and then...
+
+```bash
+script/setup
+```
+
+... this should reset everything and install all the dependencies so you can begin writing code right away. :neckbeard:
 
 ### Additional Steps & Associated Services
+
+None of these are _necessary_, but strongly **recommended**.
 
 * Enable [branch protection](https://help.github.com/articles/configuring-protected-branches/) for `master` in GitHub with [required status checks](https://help.github.com/articles/enabling-required-status-checks/)
 * Enable [AppVeyor](https://www.appveyor.com) Continuous Integration
@@ -79,11 +88,14 @@ Following steps below you will:
   * a "SQL database"
 * Connect the SQL database to the web app.
 
+In terminal...
+
 ```bash
 azure config mode arm
 azure login # ... follow instructions on the screen to login
 
 ## Decide how you want to call things...
+## Suggestion: use at least two words separated by a dash, all in lower case.
 RES_GROUP_NAME='example-resgroup'
 WEBAPP_NAME='example-webapp'
 FARM_NAME='example-farm'
@@ -105,11 +117,4 @@ azure webapp create --verbose $RES_GROUP_NAME $WEBAPP_NAME ${LOCATION_NAME:-west
 
 ```bash
 azure group delete --verbose $RES_GROUP_NAME
-```
-
-
-## Setup
-
-```bash
-script/setup
 ```
