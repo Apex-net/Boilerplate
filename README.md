@@ -96,9 +96,19 @@ azure login # ... follow instructions on the screen to login
 
 ## Decide how you want to call things...
 ## Suggestion: use at least two words separated by a dash, all in lower case.
-RES_GROUP_NAME='example-resgroup'
-WEBAPP_NAME='example-webapp'
+
+## === Mandatories ===
+
+RESGROUP_NAME='example-resgroup'
 FARM_NAME='example-farm'
+WEBAPP_NAME='example-webapp'
+DATABASE_NAME='example-database'
+
+## === Optionals ===
+
+## You can leave database server name empty, it defaults to
+## `${DATABASE_NAME}-server` (e.g. `example-database`)
+DBSERVER_NAME=''
 ## You can leave location name empty, it defaults to `westeurope`,
 ## or use `azure location list` to select a different location
 LOCATION_NAME=''
@@ -106,15 +116,21 @@ LOCATION_NAME=''
 ## 1. Create resource group
 ## 2. Create server farm (ref.: http://stackoverflow.com/questions/35511709/create-a-server-farm-aka-app-service-plan-from-the-command-line/)
 ## 3. Create web app
-azure group create --verbose $RES_GROUP_NAME ${LOCATION_NAME:-westeurope}
-azure resource create --verbose $RES_GROUP_NAME $FARM_NAME "Microsoft.Web/ServerFarms" ${LOCATION_NAME:-westeurope} "2015-06-01" --properties "{\"sku\":{\"tier\": \"Free\"},\"numberOfWorkers\":1,\"workerSize\": \"Small\"}"
-azure webapp create --verbose $RES_GROUP_NAME $WEBAPP_NAME ${LOCATION_NAME:-westeurope} $FARM_NAME
+azure group create --verbose $RESGROUP_NAME ${LOCATION_NAME:-westeurope}
+azure resource create --verbose $RESGROUP_NAME $FARM_NAME "Microsoft.Web/ServerFarms" ${LOCATION_NAME:-westeurope} "2015-06-01" --properties "{\"sku\":{\"tier\": \"Free\"},\"numberOfWorkers\":1,\"workerSize\": \"Small\"}"
+azure webapp create --verbose $RESGROUP_NAME $WEBAPP_NAME ${LOCATION_NAME:-westeurope} $FARM_NAME
+# TODO: create SQL server (Server admin login: `sqlserver-admin`, password: `!2e4567B`)
+# TODO: create SQL database
+# TODO: create a dedicated database user for web app to connect with
+# TODO: connect SQL database to web app
 ```
+
+:information_source: At this point we don't have a better way to do database related stuff, so please follow [these instructions](https://github.com/Apex-net/Boilerplate/blob/master/HOWTO_DATABASE.md).
 
 ### How to Destroy Everything You Just Created
 
 :warning: **CAUTION: THERE'S NOT GOING BACK!**
 
 ```bash
-azure group delete --verbose $RES_GROUP_NAME
+azure group delete --verbose $RESGROUP_NAME
 ```
