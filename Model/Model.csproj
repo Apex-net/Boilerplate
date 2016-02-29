@@ -50,6 +50,7 @@
   <ItemGroup>
     <Compile Include="DataAccessLayer\SchoolContext.cs" />
     <Compile Include="DataAccessLayer\SchoolInitializer.cs" />
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Course.cs" />
     <Compile Include="Models\Enrollment.cs" />
     <Compile Include="Models\Student.cs" />
