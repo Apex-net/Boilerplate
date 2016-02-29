@@ -51,6 +51,10 @@
     <Compile Include="DataAccessLayer\SchoolContext.cs" />
     <Compile Include="DataAccessLayer\SchoolInitializer.cs" />
     <Compile Include="DataAccessLayer\SchoolMigrator.cs" />
+    <Compile Include="Migrations\201602291554508_InitialCreate.cs" />
+    <Compile Include="Migrations\201602291554508_InitialCreate.Designer.cs">
+      <DependentUpon>201602291554508_InitialCreate.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Course.cs" />
     <Compile Include="Models\Enrollment.cs" />
@@ -59,6 +63,11 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201602291554508_InitialCreate.resx">
+      <DependentUpon>201602291554508_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
