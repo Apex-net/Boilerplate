@@ -1,6 +1,7 @@
 ﻿namespace Model.DataAccessLayer
 {
     using System.Data.Entity;
+    using System.Data.Entity.ModelConfiguration.Conventions;
     using Model.Models;
 
     public class SchoolContext : DbContext
@@ -10,15 +11,15 @@
         {
         }
 
-        public DbSet<Student> Students { get; set; }
+        public virtual DbSet<Student> Students { get; set; }
 
-        public DbSet<Enrollment> Enrollments { get; set; }
+        public virtual DbSet<Enrollment> Enrollments { get; set; }
 
-        public DbSet<Course> Courses { get; set; }
+        public virtual DbSet<Course> Courses { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            ////modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
+            modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
         }
     }
 }
