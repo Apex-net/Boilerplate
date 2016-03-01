@@ -130,7 +130,7 @@ azure webapp create --verbose $RESGROUP_NAME $WEBAPP_NAME ${LOCATION_NAME:-weste
 
 ### How to Destroy Everything You Just Created
 
-:warning: **CAUTION: THERE'S NOT GOING BACK!**
+:warning: **CAUTION: THERE'S NO GOING BACK!**
 
 ```bash
 azure group delete --verbose $RESGROUP_NAME
