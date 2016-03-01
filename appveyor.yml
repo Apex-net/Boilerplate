@@ -29,6 +29,10 @@ build:
   parallel: true                  # enable MSBuild parallel builds
 
 
+# scripts to run before build
+before_build:
+  - nuget restore
+
 #---------------------------------#
 #       tests configuration       #
 #---------------------------------#
