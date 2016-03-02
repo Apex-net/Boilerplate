@@ -51,6 +51,7 @@
     <Compile Include="DataAccessLayer\SchoolContext.cs" />
     <Compile Include="DataAccessLayer\SchoolInitializer.cs" />
     <Compile Include="DataAccessLayer\SchoolMigrator.cs" />
+    <Compile Include="DataAccessLayer\SeedGenerator.cs" />
     <Compile Include="Migrations\201603021605532_InitialCreate.cs" />
     <Compile Include="Migrations\201603021605532_InitialCreate.Designer.cs">
       <DependentUpon>201603021605532_InitialCreate.cs</DependentUpon>
