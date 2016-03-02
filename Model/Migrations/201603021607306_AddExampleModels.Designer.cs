@@ -7,13 +7,13 @@ namespace Model.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class InitialCreate : IMigrationMetadata
+    public sealed partial class AddExampleModels : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(InitialCreate));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(AddExampleModels));
         
         string IMigrationMetadata.Id
         {
-            get { return "201602291554508_InitialCreate"; }
+            get { return "201603021607306_AddExampleModels"; }
         }
         
         string IMigrationMetadata.Source
