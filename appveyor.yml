@@ -37,6 +37,11 @@ before_build:
 #       tests configuration       #
 #---------------------------------#
 
+test:
+  assemblies:
+    - '**\*.Tests.dll'
+
+
 #---------------------------------#
 #      artifacts configuration    #
 #---------------------------------#
