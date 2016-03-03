@@ -50,7 +50,7 @@ GH_REPO='repo'
 ## 5. Add files to source control
 ## 6. Add remote and push to GitHub
 mkdir $PROJECT_NAME
-curl -sL https://github.com/Apex-net/TryAzure/archive/master.tar.gz | tar -xzC $PROJECT_NAME --strip-components=1
+curl -sL https://github.com/Apex-net/Boilerplate/archive/master.tar.gz | tar -xzC $PROJECT_NAME --strip-components=1
 cd $PROJECT_NAME
 mv Boilerplate.sln "$PROJECT_NAME.sln"
 mv Boilerplate.sln.DotSettings "$PROJECT_NAME.sln.DotSettings"
