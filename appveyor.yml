@@ -41,6 +41,12 @@ test:
   assemblies:
     - '**\*.Tests.dll'
 
+  categories:
+    except:
+      - Ignore
+      - Skip
+      - NoAutoRun
+
 
 #---------------------------------#
 #      artifacts configuration    #

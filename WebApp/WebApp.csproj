@@ -124,6 +124,10 @@
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Convenient.System.Data.Entity\ConvenientEntityFramework.csproj">
+      <Project>{b64a0213-49a3-416c-9501-4604b6f91084}</Project>
+      <Name>ConvenientEntityFramework</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Model\Model.csproj">
       <Project>{a0b9789f-b1ef-4f52-a57c-e72c83fc4884}</Project>
       <Name>Model</Name>

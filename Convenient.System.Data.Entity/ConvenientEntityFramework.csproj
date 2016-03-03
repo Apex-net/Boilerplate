@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{A0B9789F-B1EF-4F52-A57C-E72C83FC4884}</ProjectGuid>
+    <ProjectGuid>{B64A0213-49A3-416C-9501-4604B6F91084}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Model</RootNamespace>
-    <AssemblyName>Model</AssemblyName>
+    <RootNamespace>Convenient.System.Data.Entity</RootNamespace>
+    <AssemblyName>ConvenientEntityFramework</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -48,51 +48,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DataAccessLayer\Contexts\DbContextWithOurConventions.cs" />
-    <Compile Include="DataAccessLayer\Contexts\SchoolContext.cs" />
-    <Compile Include="DataAccessLayer\Initializers\NoopInitializer.cs" />
-    <Compile Include="DataAccessLayer\Initializers\SchoolInitializer.cs" />
-    <Compile Include="DataAccessLayer\Initializers\SchoolMigrator.cs" />
-    <Compile Include="Migrations\201603031152266_MakeStudentLastNameRequired.cs" />
-    <Compile Include="Migrations\201603031152266_MakeStudentLastNameRequired.Designer.cs">
-      <DependentUpon>201603031152266_MakeStudentLastNameRequired.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Seeding\SeedGenerator.cs" />
-    <Compile Include="Seeding\StudentFactory.cs" />
-    <Compile Include="Migrations\201603021605532_InitialCreate.cs" />
-    <Compile Include="Migrations\201603021605532_InitialCreate.Designer.cs">
-      <DependentUpon>201603021605532_InitialCreate.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201603021607306_AddExampleModels.cs" />
-    <Compile Include="Migrations\201603021607306_AddExampleModels.Designer.cs">
-      <DependentUpon>201603021607306_AddExampleModels.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\Configuration.cs" />
-    <Compile Include="Models\Course.cs" />
-    <Compile Include="Models\Enrollment.cs" />
-    <Compile Include="Models\Student.cs" />
+    <Compile Include="ConvenientDbContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Seeding\BaseSeedGenerator.cs" />
+    <Compile Include="Seeding\ISeedDataFactory.cs" />
+    <Compile Include="Seeding\ISeedGenerator.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\201603021605532_InitialCreate.resx">
-      <DependentUpon>201603021605532_InitialCreate.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201603021607306_AddExampleModels.resx">
-      <DependentUpon>201603021607306_AddExampleModels.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201603031152266_MakeStudentLastNameRequired.resx">
-      <DependentUpon>201603031152266_MakeStudentLastNameRequired.cs</DependentUpon>
-    </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Convenient.System.Data.Entity\ConvenientEntityFramework.csproj">
-      <Project>{b64a0213-49a3-416c-9501-4604b6f91084}</Project>
-      <Name>ConvenientEntityFramework</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
