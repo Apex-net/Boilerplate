@@ -1,10 +1,9 @@
-﻿namespace Model.DataAccessLayer
+﻿namespace Model.DataAccessLayer.Contexts
 {
     using System.Data.Entity;
-    using System.Data.Entity.ModelConfiguration.Conventions;
     using Model.Models;
 
-    public class SchoolContext : DbContext
+    public class SchoolContext : DbContextWithOurConventions
     {
         public SchoolContext()
             : base("SchoolDatabase")
@@ -16,10 +15,5 @@
         public virtual DbSet<Enrollment> Enrollments { get; set; }
 
         public virtual DbSet<Course> Courses { get; set; }
-
-        protected override void OnModelCreating(DbModelBuilder modelBuilder)
-        {
-            modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
-        }
     }
 }

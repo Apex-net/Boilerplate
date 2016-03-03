@@ -2,7 +2,7 @@
 {
     using System.Linq;
     using System.Web.Mvc;
-    using Model.DataAccessLayer;
+    using Model.DataAccessLayer.Contexts;
 
     public class HomeController : Controller
     {
