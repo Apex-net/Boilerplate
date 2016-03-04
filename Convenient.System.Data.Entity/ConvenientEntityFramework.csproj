@@ -49,10 +49,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ConvenientDbContext.cs" />
+    <Compile Include="Migrations\OpinionatedDbMigrationsConfiguration.cs" />
+    <Compile Include="Models\OpinionatedBaseModel.cs" />
+    <Compile Include="OpinionatedDbContext.cs" />
+    <Compile Include="Opinions\IOpinionatedModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Seeding\BaseSeedGenerator.cs" />
     <Compile Include="Seeding\ISeedDataFactory.cs" />
     <Compile Include="Seeding\ISeedGenerator.cs" />
+    <Compile Include="SqlServer\OpinionatedSqlServerMigrationSqlGenerator.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
