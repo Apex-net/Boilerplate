@@ -2,7 +2,7 @@
 {
     using System.Data.Entity;
     using System.Data.Entity.ModelConfiguration.Conventions;
-    using Convenient.System.Data.Entity;
+    using Convenient.Data.Entity;
 
     public abstract class DbContextWithOurConventions : ConvenientDbContext
     {
