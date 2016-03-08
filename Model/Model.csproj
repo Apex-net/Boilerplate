@@ -30,6 +30,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="ConvenientEntityFramework, Version=0.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ConvenientEntityFramework.0.0.1.0\lib\net461\ConvenientEntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
       <Private>True</Private>
@@ -87,12 +91,6 @@
     <EmbeddedResource Include="Migrations\201603031152266_MakeStudentLastNameRequired.resx">
       <DependentUpon>201603031152266_MakeStudentLastNameRequired.cs</DependentUpon>
     </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Convenient.System.Data.Entity\ConvenientEntityFramework.csproj">
-      <Project>{b64a0213-49a3-416c-9501-4604b6f91084}</Project>
-      <Name>ConvenientEntityFramework</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

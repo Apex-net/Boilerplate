@@ -1,7 +1,7 @@
 ﻿namespace Model.Seeding
 {
     using System.Data.Entity.Migrations;
-    using Convenient.System.Data.Entity.Seeding;
+    using Convenient.Data.Entity.Seeding;
     using Model.DataAccessLayer.Contexts;
 
     public class SeedGenerator : BaseSeedGenerator

@@ -39,6 +39,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="ConvenientEntityFramework, Version=0.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ConvenientEntityFramework.0.0.1.0\lib\net461\ConvenientEntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
       <Private>True</Private>
@@ -124,10 +128,6 @@
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Convenient.System.Data.Entity\ConvenientEntityFramework.csproj">
-      <Project>{b64a0213-49a3-416c-9501-4604b6f91084}</Project>
-      <Name>ConvenientEntityFramework</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Model\Model.csproj">
       <Project>{a0b9789f-b1ef-4f52-a57c-e72c83fc4884}</Project>
       <Name>Model</Name>

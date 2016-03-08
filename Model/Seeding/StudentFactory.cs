@@ -1,7 +1,7 @@
 namespace Model.Seeding
 {
     using System;
-    using Convenient.System.Data.Entity.Seeding;
+    using Convenient.Data.Entity.Seeding;
     using Model.Models;
 
     public class StudentFactory : ISeedDataFactory<Student>
