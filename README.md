@@ -52,8 +52,8 @@ GH_REPO='repo'
 mkdir $PROJECT_NAME
 curl -sL https://github.com/Apex-net/Boilerplate/archive/master.tar.gz | tar -xzC $PROJECT_NAME --strip-components=1
 cd $PROJECT_NAME
-mv Boilerplate.sln "$PROJECT_NAME.sln"
-mv Boilerplate.sln.DotSettings "$PROJECT_NAME.sln.DotSettings"
+mv src/Boilerplate.sln "src/$PROJECT_NAME.sln"
+mv src/Boilerplate.sln.DotSettings "src/$PROJECT_NAME.sln.DotSettings"
 git init && git commit --allow-empty -m"First commit."
 git add . && git commit -m"Initial project structure."
 git remote add origin "https://github.com/$GH_USER/$GH_REPO.git"
