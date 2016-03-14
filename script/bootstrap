@@ -9,6 +9,6 @@ source "script/helpers/_helpers.sh"
 begin
 
 topic 'Installing all required dependencies via NuGet.'
-  nuget restore | indent
+  nuget restore src/ | indent
 
 end

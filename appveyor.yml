@@ -19,7 +19,7 @@ clone_depth: 1                      # clone entire repository history if not def
 
 # build cache to preserve files/folders between builds
 cache:
-  - packages -> **\packages.config  # preserve "packages" directory in the root of build folder but will reset it if packages.config is modified
+  - src\packages -> src\**\packages.config  # preserve "packages" directory in the root of build folder but will reset it if packages.config is modified
 
 #---------------------------------#
 #       build configuration       #
@@ -31,7 +31,7 @@ build:
 
 # scripts to run before build
 before_build:
-  - nuget restore
+  - nuget restore src\
 
 #---------------------------------#
 #       tests configuration       #
