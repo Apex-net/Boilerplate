@@ -39,6 +39,22 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AjaxMin, Version=4.84.4790.14405, Culture=neutral, PublicKeyToken=21ef50ce11b5d80f, processorArchitecture=MSIL">
+      <HintPath>..\packages\AjaxMin.4.84.4790.14417\lib\net40\AjaxMin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Cassette, Version=2.4.2.13844, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Cassette.2.4.2\lib\net40-client\Cassette.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Cassette.Aspnet, Version=2.4.2.13845, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Cassette.Aspnet.2.4.2\lib\net40\Cassette.Aspnet.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Cassette.Views, Version=2.4.2.13844, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Cassette.Views.2.4.2\lib\net40\Cassette.Views.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="ConvenientEntityFramework, Version=0.0.1.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\ConvenientEntityFramework.0.0.1.0\lib\net461\ConvenientEntityFramework.dll</HintPath>
       <Private>True</Private>
@@ -92,11 +108,29 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\application.css">
+      <DependentUpon>application.scss</DependentUpon>
+    </Content>
     <Content Include="Global.asax" />
-    <Content Include="Web.config" />
+    <None Include="Content\application.scss" />
+    <None Include="Content\_main.scss" />
+    <None Include="Content\base\_base.scss" />
+    <None Include="Content\base\_buttons.scss" />
+    <None Include="Content\base\_forms.scss" />
+    <None Include="Content\base\_grid-settings.scss" />
+    <None Include="Content\base\_lists.scss" />
+    <None Include="Content\base\_tables.scss" />
+    <None Include="Content\base\_typography.scss" />
+    <None Include="Content\base\_variables.scss" />
+    <None Include="Properties\PublishProfiles\deleteme.pubxml" />
+    <None Include="Scripts\_references.js" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="CassetteConfiguration.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\StudentsController.cs" />
     <Compile Include="Global.asax.cs">
@@ -149,6 +183,13 @@
       </FlavorProperties>
     </VisualStudio>
   </ProjectExtensions>
+  <PropertyGroup>
+    <PreBuildEvent>
+if $(ConfigurationName) == Debug (
+  bundle exec sass --update --force --scss --style expanded "$(ProjectDir)\Content\application.scss"
+)
+</PreBuildEvent>
+  </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
