@@ -298,3 +298,11 @@ _Pvt_Extensions
 
 # FAKE - F# Make
 .fake/
+
+
+##
+## https://github.com/github/gitignore/blob/5141423fba11bc44ee83d0ce372056932f0b944f/Sass.gitignore
+##
+
+.sass-cache/
+*.css.map

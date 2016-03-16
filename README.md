@@ -16,7 +16,11 @@ Following is the recommended setup to work as a developer.
 
   > :information_source: You could install [Mintty](https://mintty.github.io/) (or any other terminal emulator) and [Git](https://git-scm.com/downloads) separately instead, but _we think_ the solution above is much easier. Although you may prefer **not** use GitHub Desktop, "Git Shell" (which is installed along with it) is *super* handy.
 
-0. Done. :wink:
+  > :warning: **To follow to the rest of this guide you will use "Git Shell" installed in this step...**
+
+0. Install [Ruby](http://rubyinstaller.org/) and make sure to add `C:\Ruby200-x64\bin` to your `PATH`.
+
+  > :information_source: `C:\Ruby200-x64\bin` may be a different path based on your installation and there's a checkbox to do this automatically during the installation that you could enable.
 
 
 ## Default Azure Setup

@@ -8,7 +8,15 @@ source "script/helpers/_helpers.sh"
 
 begin
 
-topic 'Installing all required dependencies via NuGet.'
+which bundle >/dev/null 2>&1  || { topic 'Installing bundler...'
+  gem install bundler | indent
+}
+
+bundle check 2>&1  || { topic 'Installing gem dependencies...'
+  bundle install | indent
+}
+
+topic 'Installing all required dependencies via NuGet...'
   nuget restore src/ | indent
 
 end
