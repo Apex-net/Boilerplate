@@ -68,13 +68,13 @@ git push --set-upstream origin master
 
 ### Build & Run
 
-This boilerplate tries to be compatible with ["Scripts to Rule Them All"](https://github.com/github/scripts-to-rule-them-all), so you should now be able...
+This boilerplate tries to be compatible with ["Scripts to Rule Them All"](https://github.com/github/scripts-to-rule-them-all), so you should now be able to...
 
 ```bash
 script/setup
 ```
 
-This should reset everything and install all the dependencies. You can now begin writing code right away. :neckbeard:
+This should reset everything and install all the dependencies. You can begin writing code right away! :neckbeard:
 
 ### Additional Steps & Associated Services
 
