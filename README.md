@@ -22,6 +22,8 @@ Following is the recommended setup to work as a developer.
 
   > :information_source: `C:\Ruby200-x64\bin` may be a different path based on your installation and there's a checkbox to do this automatically during the installation that you could enable.
 
+0. Install [NuGet command line utility](https://docs.nuget.org/consume/command-line-reference#user-content-installing) and make sure `nuget help | head -1` prints out something similar to `NuGet Version: 3.3.0.212`.
+
 
 ## Default Azure Setup
 
@@ -66,13 +68,13 @@ git push --set-upstream origin master
 
 ### Build & Run
 
-This boilerplate tries to be compatible with ["Scripts to Rule Them All"](https://github.com/github/scripts-to-rule-them-all), but first off you will need to install [NuGet command line utility](https://docs.nuget.org/consume/command-line-reference#user-content-installing) and then...
+This boilerplate tries to be compatible with ["Scripts to Rule Them All"](https://github.com/github/scripts-to-rule-them-all), so you should now be able...
 
 ```bash
 script/setup
 ```
 
-... this should reset everything and install all the dependencies so you can begin writing code right away. :neckbeard:
+This should reset everything and install all the dependencies. You can now begin writing code right away. :neckbeard:
 
 ### Additional Steps & Associated Services
 
