@@ -77,14 +77,6 @@ notifications:
     on_build_failure: true
     on_build_status_changed: true
 
-  # Email
-  - provider: Email
-    to:
-      - a.donmez@apexnet.it
-    on_build_success: false
-    on_build_failure: true
-    on_build_status_changed: true
-
   # GitHubPullRequest
   - provider: GitHubPullRequest
     on_build_success: false
