@@ -1,4 +1,4 @@
-[![Build status](https://ci.appveyor.com/api/projects/status/ok1nqa448ailsxq3?svg=true)](https://ci.appveyor.com/project/apexnet-admin/boilerplate)
+[![Build status](https://ci.appveyor.com/api/projects/status/ok1nqa448ailsxq3/branch/master?svg=true)](https://ci.appveyor.com/project/apexnet-admin/boilerplate/branch/master)
 
 Boilerplate
 ===========
