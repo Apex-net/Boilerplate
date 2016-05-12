@@ -56,7 +56,7 @@ GH_REPO='repo'
 ## 5. Add files to source control
 ## 6. Add remote and push to GitHub
 mkdir $PROJECT_NAME
-curl -sL https://github.com/Apex-net/Boilerplate/archive/master.tar.gz | tar -xzC $PROJECT_NAME --strip-components=1
+curl -sL https://github.com/wedoit-io/Boilerplate/archive/master.tar.gz | tar -xzC $PROJECT_NAME --strip-components=1
 cd $PROJECT_NAME
 mv src/Boilerplate.sln "src/$PROJECT_NAME.sln"
 mv src/Boilerplate.sln.DotSettings "src/$PROJECT_NAME.sln.DotSettings"
@@ -134,7 +134,7 @@ azure webapp create --verbose $RESGROUP_NAME $WEBAPP_NAME ${LOCATION_NAME:-weste
 # TODO: connect SQL database to web app
 ```
 
-:information_source: At this point we don't have a better way to do database related stuff, so please follow [these instructions](https://github.com/Apex-net/Boilerplate/blob/master/HOWTO_DATABASE.md).
+:information_source: At this point we don't have a better way to do database related stuff, so please follow [these instructions](https://github.com/wedoit-io/Boilerplate/blob/master/HOWTO_DATABASE.md).
 
 ### How to Destroy Everything You Just Created
 
