@@ -18,9 +18,11 @@ Following is the recommended setup to work as a developer.
 
   > :warning: **To follow to the rest of this guide you will use "Git Shell" installed in this step...**
 
-0. Install [Ruby](http://rubyinstaller.org/) and make sure to add `C:\Ruby200-x64\bin` to your `PATH`.
+0. Install [Ruby](http://dl.bintray.com/oneclick/rubyinstaller/ruby-2.2.5-i386-mingw32.7z) and [DevKit](http://dl.bintray.com/oneclick/rubyinstaller/DevKit-mingw64-32-4.7.2-20130224-1151-sfx.exe) _(optional)_; and make sure to add `C:\Ruby22\bin` to your `PATH`.
 
-  > :information_source: `C:\Ruby200-x64\bin` may be a different path based on your installation and there's a checkbox to do this automatically during the installation that you could enable.
+  > :information_source: `C:\Ruby22\bin` may be a different path based on your installation and there's a checkbox to do this automatically during the installation that you could enable.
+
+  > :information_source: Detailed installation instructions for DevKit are [here](https://github.com/oneclick/rubyinstaller/wiki/Development-Kit/25db58138bb49410ef9d7b695dbd1e8384b47871). In most cases all you will have to do is to download & extract in `C:\DevKit`, and `cd /c/DevKit && ruby dk.rb init && ruby dk.rb install` afterwards.
 
 0. Install [NuGet command line utility](https://docs.nuget.org/consume/command-line-reference#user-content-installing) and make sure `nuget help | head -1` prints out something similar to `NuGet Version: 3.3.0.212`.
 
